@@ -12,20 +12,36 @@ namespace PingPong
       string stringInput = Console.ReadLine();
       int numInput = int.Parse(stringInput);
 
-      List<int> NumbersInputted = new List<int>{};
-
-      // foreach (int number in NumbersInputted)
-      // {
-      //   if (numInput >= NumbersInputted(number)); 
-      //   return NumbersInputted.Add(numInput);
-      // }
-      //   Console.WriteLine(NumbersInputted);
+      List<string> ListArray = new List<string>{};
       
       for (int i = 1; i <= numInput; i++) {
-          NumbersInputted.Add(i);
-          Console.WriteLine(i);
+        if (i % 3 == 0 && i % 5 == 0)
+        {
+          string j = i.ToString();
+          j = "Ping-Pong";
+          ListArray.Add(j);
+        }
+        else if (i % 3 == 0)
+        {
+          string j = i.ToString();
+          j = "Ping";
+          ListArray.Add(j);
+        }
+        else if (i % 5 == 0)
+        {
+          string j = i.ToString();
+          j = "Pong";
+          ListArray.Add(j);
+        }
+        else
+        {
+          string j = i.ToString();
+          ListArray.Add(j);
+        } 
       }
-      Console.WriteLine(List(NumbersInputted));
+      ListArray.ForEach(Console.WriteLine);
     }
   }
 }
+
+
